@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Scheduler
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center mt-4">Welcome to Scheduler Django Project</h1>
+<a class = "btn btn-primary mb-4" href ="{% url 'scheduleCreate' %}"> Create a Schedule </a>
+<div class="container row gap-3">
+    
+    {% for schedule in schedules %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{schedule.photo.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{schedule.user.username}}</h5>
+          <p class="card-text">{{schedule.text}}}</p>
+          
+          {% if schedule.user == user %}
+          <a href="{% url 'scheduleEdit' schedule.id %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'scheduleDelete' schedule.id %}" class="btn btn-danger">Delete</a>
+          {% endif %}
+        </div>
+      </div>  
+    {% endfor %}
+        
+</div>
+{% endblock %}
