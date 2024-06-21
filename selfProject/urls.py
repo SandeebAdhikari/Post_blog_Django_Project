@@ -18,11 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from scheduler import views
+from scheduler import views as scheduler_view
 from django.contrib.auth.urls import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.schedulerList, name='home'),
+    path('', scheduler_view.schedulerList, name='home'),
     path('scheduler/', include('scheduler.urls')),   
     path('accounts/', include('django.contrib.auth.urls')), 
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
