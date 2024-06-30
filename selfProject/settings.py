@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-#import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!)0iyeon%g_)j_s4j4aklta=7wig=%1egl90-vp!gb%tws1ws+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+
 
 # Application definition
 
@@ -133,5 +134,4 @@ LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = '/scheduler/'
 LOGOUT_REDIRECT_URL = '/scheduler/'
 
-# Remove the following line as it's specific to Heroku
-# django_heroku.settings(locals())
+
