@@ -1,25 +1,13 @@
 #!/bin/bash
 
-# Ensure pip is available
-python3.9 -m ensurepip --upgrade
-
-# Install virtualenv if not already installed
-python3.9 -m pip install --upgrade virtualenv
-
-# Create a virtual environment
-python3.9 -m virtualenv venv
-
-# Activate the virtual environment
+# Create and activate virtual environment
+python3 -m venv venv
 source venv/bin/activate
 
-# Upgrade pip
-python3.9 -m pip install --upgrade pip
+# Upgrade pip and install requirements
+pip install --upgrade pip
+pip install -r requirements.txt
 
-# Install the requirements
-python3.9 -m pip install -r requirements.txt
-
-# Run collectstatic
-python3.9 manage.py collectstatic --noinput
-
-# Run migrations
-python3.9 manage.py migrate
+# Collect static files and apply migrations
+python manage.py collectstatic --noinput
+python manage.py migrate
