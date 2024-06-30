@@ -1,13 +1,13 @@
 
 {
   "builds": [{
-      "src": "Post_blog_Django_Project/selfProject/wsgi.py",
+      "src": "selfProject/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
   }],
   "routes": [
       {
           "src": "/(.*)",
-          "dest": "Post_blog_Django_Project/selfProject/wsgi.py"
+          "dest": "selfProject/wsgi.py"
       }
   ]
