@@ -3,6 +3,15 @@
 # Ensure pip is available
 python3.9 -m ensurepip --upgrade
 
+# Install virtualenv if not already installed
+python3.9 -m pip install --upgrade virtualenv
+
+# Create a virtual environment
+python3.9 -m virtualenv venv
+
+# Activate the virtual environment
+source venv/bin/activate
+
 # Upgrade pip
 python3.9 -m pip install --upgrade pip
 
