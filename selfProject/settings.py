@@ -81,16 +81,25 @@ WSGI_APPLICATION = 'selfProject.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'sandeebadhikari',
+#         'USER': 'sandeebadhikari',
+#         'PASSWORD': 'helloboy123',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+
+
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sandeebadhikari',
-        'USER': 'sandeebadhikari',
-        'PASSWORD': 'helloboy123',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(default='postgresql://postgres:xbUrASRNtndpQJsmXLvEXbeFJwHhQMgg@roundhouse.proxy.rlwy.net:48556/railway')
 }
+
 
 
 # Password validation
