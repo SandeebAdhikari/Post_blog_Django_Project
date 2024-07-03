@@ -14,7 +14,7 @@
         <img src="{{schedule.photo.url}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{schedule.user.username}}</h5>
-          <p class="card-text">{{schedule.text}}}</p>
+          <p class="card-text">{{schedule.text}}</p>
           
           {% if schedule.user == user %}
           <a href="{% url 'scheduleEdit' schedule.id %}" class="btn btn-primary">Edit</a>
