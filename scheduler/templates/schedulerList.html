@@ -9,7 +9,7 @@
 <a class = "btn btn-primary mb-4" href ="{% url 'scheduleCreate' %}"> Create a new Blog </a>
 <div class="container row gap-3">
     
-    {% for schedule in schedules %}
+    {% for schedule in scheduler %}
     <div class="card" style="width: 18rem;">
         <img src="{{schedule.photo.url}}" class="card-img-top" alt="...">
         <div class="card-body">
