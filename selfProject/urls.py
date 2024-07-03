@@ -23,7 +23,7 @@ from django.contrib.auth.urls import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', scheduler_view.schedulerList, name='home'),
-    path('scheduler/', include('scheduler.urls')),   
+    path('blog/', include('scheduler.urls')),   
     path('accounts/', include('django.contrib.auth.urls')), 
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
 

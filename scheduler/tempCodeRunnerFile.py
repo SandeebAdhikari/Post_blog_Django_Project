@@ -1,1 +1,1 @@
- path('create/', views.scheduleCreate, name='scheduleCreate'),
+ path('create/', views.scheduleCreate, name='createBlog'),

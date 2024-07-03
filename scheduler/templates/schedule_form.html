@@ -1,11 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    Scheduler
+    Bloger's Hub
 {% endblock %}
 
 {% block content %}
-<h1 class="text-center mt-4">Welcome to Scheduler Django Project</h1>
+<h1 class="text-center mt-4">Welcome to Bloger's Hub</h1>
 <h2>
     
     {% if form.instance.pk %}
@@ -16,9 +16,9 @@
     <form method="post" enctype="multipart/form-data" class="form">
         {%csrf_token%}
         {{form.as_p}}
-        <button class="btn btn-warning" type="submit">Add Schedule</button>
+        <button class="btn btn-warning" type="submit">Add Blog</button>
     </form>
-    <a href="{% url 'schedulerList' %}"> Back To schedule List </a>
+    <a href="{% url 'schedulerList' %}"> Back To Blog List </a>
 
 </h2>
 
